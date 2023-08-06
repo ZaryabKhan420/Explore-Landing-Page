@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Montserrat:wght@300;400;500;600&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@100&family=Rubik:wght@500&family=Simonetta&display=swap');
+
+    /* Essential CSS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow-x: none;
+}
+
+body{
+    background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)),url('./images/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 0 4rem;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+li{
+    list-style: none;
+}
+
+    /* Utility Classes  */
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    /* Header Section  */
+
+#header{
+    min-width: 10vh;
+    width: 100%;
+    justify-content: space-between;
+}
+
+    /* Logo Design  */
+
+.logo{
+    width: 40%;
+}
+
+.logo > img{
+    height: 3rem;
+    cursor: pointer;
+}
+
+    /* Navigation Bar  */
+
+.navbar{
+    width: 60%;
+    height: 100%;
+}
+
+.navbar-list{
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+}
+
+.navbar > .navbar-list > li > a{
+    font-size: 0.9rem;
+}
+
+.navbar-btn > a > img{
+    height: 1.2rem;
+}
+
+.btn{
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    background-color: #FE2B91;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.navbtn{
+    gap: 0.5rem;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+    /* Main Section  */
+
+    /* Content Box  */
+
+#main{
+    width: 100%;
+    min-height: 90vh;
+    justify-content: start;
+} 
+
+.content{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 1rem;
+    width: 48%;
+}
+
+.content h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.content p{
+    font-size: 0.9rem;
+}
+
+.input-form{
+    margin-top: 0.8rem;
+    background-color: #fff;
+    width: 100%;
+    padding: 0.5rem 0;
+    border-radius: 0.3rem;
+}
+
+#input-text{
+    background: transparent;
+    border: none;
+    padding: 0.3rem 0;
+    width: 80%;
+    outline: none;
+}
+
+#input-text::placeholder{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.input-btn{
+    cursor: pointer;
+    padding: 0.5rem 1.3rem;
+}
+
+    /* ResponsiveNess  */
+
+    /* For Laptop  */
+
+@media (max-width:1300px) {
+    .content{
+        width: 60%;
+    }
+}
+
+@media (max-width:1100px) {
+    .content{
+        width: 70%;
+    }
+}
+
+
+
+    /* For Tablet  */
+
+    @media (max-width:800px) {
+
+        .content{
+            width: 80%;
+        }
+
+        .content > h1{
+            font-size: 3.2rem;
+        }
+
+        .content > h1 > br{
+            display: none;
+        }
+
+    }
+
+
+@media (max-width:920px) {
+    .content{
+        width: 80%;
+    }
+    .content > h1 > br{
+        display: none;
+    }
+}
+
+@media (max-width:1000px) {
+
+    body{
+        overflow-x: none;
+    }
+
+    .mobile-menu{
+        display: flex;
+    }
+
+    .mobile-menu > i{
+        font-size: 1.3rem;
+        cursor: pointer;
+        z-index: 999;
+    }
+
+    #cross{
+        display: none;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: none;
+        background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)),url('./images/background.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6rem;
+        transform: translateX(100%);
+        transition: 0.3s all linear;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .navbar-list{
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbtn{
+        margin-top: 2rem;
+    }
+
+    /* Applying Active Class  */
+
+    .active .navbar{
+        transform:translateX(0%);
+        opacity: 5;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active #hamburger{
+        display: none;
+    }
+
+    .active #cross{
+        display: block;
+    }
+
+}
+
+    /* For Mobile  */   
+
+
+@media (max-width:500px) {
+    body{
+        padding: 0 1.5rem;
+    }
+    
+    .content{
+        width: 100%;
+    }
+    
+    .content > h1{
+        font-size: 2.4rem;
+    }
+
+    .content > h1 > br{
+        display: none;
+    }
+
+    .input-form{
+        padding-inline: 0.5rem;
+    }
+
+    #input-text::placeholder{
+        font-size: 0.8rem;
+    } 
+}
+
+
